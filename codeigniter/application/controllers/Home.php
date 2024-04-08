@@ -24,7 +24,7 @@ class Home extends CI_Controller {
 
     public function productdetails($slug){
         $data['arr'] = $this->HomeModel->productdetails($slug);
-        echo"<pre>";
-        print_r($data['arr']);
+       
+        $this->load->view('front/product-details', $data);
     }
 }
