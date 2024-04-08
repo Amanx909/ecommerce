@@ -319,7 +319,7 @@
                         <div class="row align-items-center">
                            <div class="col-xl-5 col-lg-6 col-md-6">
                               <div class="tp-slider-content p-relative z-index-1">           
-                                 <span>Starting at <b>$274.00</b></span>
+                                 <span>Starting at <b>Npr 27,000.00</b></span>
                                  <h3 class="tp-slider-title">The best Collection 2024</h3>
                                  <p>Exclusive offer 
                                     <span>-35% 

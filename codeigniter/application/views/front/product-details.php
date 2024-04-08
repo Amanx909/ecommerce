@@ -142,9 +142,11 @@
                           
    
                            <!-- actions -->
+                           <?=form_open('cart/addtocart')?>
                            <div class="tp-product-details-action-wrapper">
                               <h3 class="tp-product-details-action-title">Quantity</h3>
                               <div class="tp-product-details-action-item-wrapper d-flex align-items-center">
+                                 
                                  <div class="tp-product-details-quantity">
                                     <div class="tp-product-quantity mb-15 mr-15">
                                        <span class="tp-cart-minus">
@@ -152,7 +154,7 @@
                                              <path d="M1 1H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                           </svg>                                                            
                                        </span>
-                                       <input class="tp-cart-input" type="text" value="1">
+                                       <input class="tp-cart-input" type="text" name="pro_qty" value="1">
                                        <span class="tp-cart-plus">
                                           <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                              <path d="M1 6H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -162,9 +164,11 @@
                                     </div>
                                  </div>
                                  <div class="tp-product-details-add-to-cart mb-15 w-100">
+                                 <input  type="hidden" name="pro_id" value="<?=$arr->pro_id?>">
                                     <button class="tp-product-details-buy-now-btn w-100">Add To Cart</button>
                                  </div>
                               </div>
+                              <?=form_close()?>
                               <!-- <button class="tp-product-details-buy-now-btn w-100">Buy Now</button> -->
                            </div>
                            <div class="tp-product-details-action-sm">
