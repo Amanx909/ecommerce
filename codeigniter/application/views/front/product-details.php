@@ -55,52 +55,14 @@
                   <div class="row">
                      <div class="col-xl-7 col-lg-6">
                         <div class="tp-product-details-thumb-wrapper tp-tab d-sm-flex">
-                           <!-- <nav>
-                              <div class="nav nav-tabs flex-sm-column " id="productDetailsNavThumb" role="tablist">
-                                 <button class="nav-link active" id="nav-1-tab" data-bs-toggle="tab" data-bs-target="#nav-1" type="button" role="tab" aria-controls="nav-1" aria-selected="true">
-                                    <img src="assets/img/product/details/nav/product-details-nav-1.jpg" alt="">
-                                 </button>
-                                 <button class="nav-link" id="nav-2-tab" data-bs-toggle="tab" data-bs-target="#nav-2" type="button" role="tab" aria-controls="nav-2" aria-selected="false">
-                                    <img src="assets/img/product/details/nav/product-details-nav-2.jpg" alt="">
-                                 </button>
-                                 <button class="nav-link" id="nav-3-tab" data-bs-toggle="tab" data-bs-target="#nav-3" type="button" role="tab" aria-controls="nav-3" aria-selected="false">
-                                    <img src="assets/img/product/details/nav/product-details-nav-3.jpg" alt="">
-                                 </button>
-                                 <button class="nav-link" id="nav-4-tab" data-bs-toggle="tab" data-bs-target="#nav-4" type="button" role="tab" aria-controls="nav-4" aria-selected="false">
-                                    <img src="assets/img/product/details/nav/product-details-nav-4.jpg" alt="">
-                                 </button>
-                                 <button class="nav-link" id="nav-5-tab" data-bs-toggle="tab" data-bs-target="#nav-5" type="button" role="tab" aria-controls="nav-5" aria-selected="false">
-                                    <img src="assets/img/product/details/nav/product-details-nav-5.jpg" alt="">
-                                 </button>
-                              </div>
-                           </nav> -->
+                         ->
                            <div class="tab-content m-img" id="productDetailsNavContent">
                               <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab" tabindex="0">
                                  <div class="tp-product-details-nav-main-thumb">
                                     <img src="uploads/<?=$arr->pro_main_image?>" alt="">
                                  </div>
                               </div>
-                              <!-- <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab" tabindex="0">
-                                 <div class="tp-product-details-nav-main-thumb">
-                                    <img src="assets/img/product/details/main/product-details-main-2.jpg" alt="">
-                                 </div>
-                              </div>
-                              <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-3-tab" tabindex="0">
-                                 <div class="tp-product-details-nav-main-thumb">
-                                    <img src="assets/img/product/details/main/product-details-main-3.jpg" alt="">
-                                 </div>
-                              </div>
-                              <div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-4-tab" tabindex="0">
-                                 <div class="tp-product-details-nav-main-thumb">
-                                    <img src="assets/img/product/details/main/product-details-main-4.jpg" alt="">
-                                 </div>
-                              </div>
-                              <div class="tab-pane fade" id="nav-5" role="tabpanel" aria-labelledby="nav-5-tab" tabindex="0">
-                                 <div class="tp-product-details-nav-main-thumb">
-                                    <img src="assets/img/product/details/main/product-details-main-5.jpg" alt="">
-                                 </div>
-                              </div> -->
-                            </div>
+</div>
                         </div>
                      </div> <!-- col end -->
                      <div class="col-xl-5 col-lg-6">
@@ -119,18 +81,7 @@
                                 <span>Out of Stock</span>
                                 <?php endif;?>
                               </div>
-                              <!-- <div class="tp-product-details-rating-wrapper d-flex align-items-center mb-10">
-                                 <div class="tp-product-details-rating">
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                 </div>
-                                 <div class="tp-product-details-reviews">
-                                    <span>(36 Reviews)</span>
-                                 </div>
-                              </div> -->
+                              
                            </div>
                            <p><?=$arr->highlights?></p>
    
@@ -185,18 +136,12 @@
                              
                            </div>
                            <div class="tp-product-details-query">
-                              <!-- <div class="tp-product-details-query-item d-flex align-items-center">
-                                 <span>SKU:  </span>
-                                 <p>NTB7SDVX44</p>
-                              </div> -->
+                              
                               <div class="tp-product-details-query-item d-flex align-items-center">
                                  <span>Category:  </span>
                                  <p><?=$this->HomeModel->categoryname($arr->category)?></p>
                               </div>
-                              <!-- <div class="tp-product-details-query-item d-flex align-items-center">
-                                 <span>Tag: </span>
-                                 <p>Android</p>
-                              </div> -->
+                             
                            </div>
                            
                            <div class="tp-product-details-payment d-flex align-items-center flex-wrap justify-content-between">
@@ -216,9 +161,7 @@
                            <nav>
                               <div class="nav nav-tabs justify-content-center p-relative tp-product-tab" id="navPresentationTab" role="tablist">
                                 <button class="nav-link " id="nav-description-tab" data-bs-toggle="tab" data-bs-target="#nav-description" type="button" role="tab" aria-controls="nav-description" aria-selected="true">Description</button>
-                                <!-- <button class="nav-link active" id="nav-addInfo-tab" data-bs-toggle="tab" data-bs-target="#nav-addInfo" type="button" role="tab" aria-controls="nav-addInfo" aria-selected="false">Additional information</button>
-                                <button class="nav-link" id="nav-review-tab" data-bs-toggle="tab" data-bs-target="#nav-review" type="button" role="tab" aria-controls="nav-review" aria-selected="false">Reviews (2)</button> -->
-
+                                
                                 <span id="productTabMarker" class="tp-product-details-tab-line"></span>
                               </div>
                             </nav>  
@@ -245,72 +188,7 @@
                               </div>
                               <div class="tab-pane fade  " id="nav-addInfo" role="tabpanel" aria-labelledby="nav-addInfo-tab" tabindex="0">
                                  
-                                 <div class="tp-product-details-additional-info ">
-                                    <div class="row justify-content-center">
-                                       <div class="col-xl-10">
-                                          <table>
-                                             <tbody>
-                                                <tr>
-                                                   <td>Standing screen display size</td>
-                                                   <td>Screen display Size 10.4</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Color</td>
-                                                   <td>Gray, Dark gray, Mystic black</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Screen Resolution</td>
-                                                   <td>1920 x 1200 Pixels</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Max Screen Resolution</td>
-                                                   <td>2000 x 1200</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Processor</td>
-                                                   <td>2.3 GHz (128 GB)</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Graphics Coprocessor</td>
-                                                   <td>Exynos 9611, Octa Core (4x2.3GHz + 4x1.7GHz)</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Wireless Type</td>
-                                                   <td>802.11a/b/g/n/ac, Bluetooth</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Average Battery Life (in hours)</td>
-                                                   <td>13 Hours</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Series</td>
-                                                   <td>Samsung Galaxy tab S6 Lite WiFi</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Item model number</td>
-                                                   <td>SM-P6102ZAEXOR</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Hardware Platform</td>
-                                                   <td>Android</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Operating System</td>
-                                                   <td>Android 12</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Batteries</td>
-                                                   <td>1 Lithium Polymer batteries required. (included)</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>Product Dimensions</td>
-                                                   <td>0.28 x 6.07 x 9.63 inches</td>
-                                                </tr>
-                                             </tbody>
-                                          </table>
-                                       </div>
-                                    </div>
-                                 </div>
+                               
                               </div>
                               <div class="tab-pane fade" id="nav-review" role="tabpanel" aria-labelledby="nav-review-tab" tabindex="0">
                                  <div class="tp-product-details-review-wrapper pt-60">

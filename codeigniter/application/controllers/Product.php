@@ -6,7 +6,10 @@ class Product extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('CategoryModel');
-        $this->load->model('ProductModel'); // Correcting model class name
+        $this->load->model('ProductModel'); 
+        // Load the HomeModel in the constructor or any method before using it
+        $this->load->model('HomeModel');
+// Correcting model class name
         $this->load->helper('url'); // Load URL Helper
         $this->load->helper('form'); // Load Form Helper
         $this->load->library('session');
@@ -53,9 +56,27 @@ class Product extends CI_Controller {
           
             
             $data['categories'] = $this->CategoryModel->allcategory();
-            
+           
             $this->load->view('product', $data);
         }
+
     }
+
+    public function productbycat($slug, $slug2 = ''){
+        if (!empty($slug) && !empty($slug2)){
+            $slug = $slug2;
+        } else {
+            $slug = $slug;
+        }
+    
+        $cate_id = $this->ProductModel->fetchcat($slug);
+        $data['products'] = $this->ProductModel->fetchproduct($cate_id);
+      
+        // Fetch categories navigation data from HomeModel
+        $data['getcategorynav'] = $this->HomeModel->getcategorynav();
+    
+        $this->load->view('front/productcat', $data);
+    }
+    
+      
 }
-?>

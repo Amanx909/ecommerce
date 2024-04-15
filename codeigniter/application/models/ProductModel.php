@@ -20,5 +20,32 @@ class ProductModel extends CI_Model {
         $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
         return $slug;
     }
+
+    public function fetchcat($slug){
+      $q =  $this->db->select('cate_id')->where('slug',$slug)->get('ec_category');
+      if($q->num_rows()){
+        return $q->row()->cate_id;
+      }
+    }
+    public function fetchproduct($cateid) {
+        // Set where conditions before querying
+        $this->db->where(['status' => 1]);
+        // Use OR condition for category and sub-category
+        $this->db->where("(category = $cateid OR sub_category = $cateid)");
+        $q = $this->db->get('ec_product');
+        
+        if ($q->num_rows() > 0) {
+            return $q->result();
+        } else {
+            return false;
+        }
+    }
+
+    
+  
+
 }
+
+
+
 ?>

@@ -4,7 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class CartModel extends CI_Model {
 
     public function getuserid(){
-        return $this->session->userdata('user_idn'); 
+        if(!empty($this->session->userdata('login_id'))){
+            return $this->session->userdata('login_id');
+        }else{
+            return $this->session->userdata('user_id');
+        }
+        
     }
 
     public function getcart(){
@@ -39,7 +44,8 @@ class CartModel extends CI_Model {
                     'pro_image' => $prod->pro_main_image,
                     'added_on' => date('Y-m-d')
                 );
-
+                        
+                        
                 // Insert data into the cart table
                 $this->db->insert('ec_cart', $data);
                 return true;

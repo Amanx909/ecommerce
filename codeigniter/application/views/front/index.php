@@ -551,7 +551,7 @@
                   </div>
                </div>
                <div class="row">
-                  <div class="col-xl-12">
+                  <div class="col-xl-10">
                      <div class="tp-product-tab-content">
                         <div class="tab-content" id="myTabContent">
                            <div class="tab-pane fade show active" id="new-tab-pane" role="tabpanel" aria-labelledby="new-tab" tabindex="0">

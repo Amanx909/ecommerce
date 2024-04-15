@@ -31,7 +31,7 @@ public function getbanner(){
 }
  }
  public function categoryname($cateid){
-    $q = $this->db->where('cate_id',$cateid)->get('ec_category');
+    $q = $this->db->where(['cate_id'=>$cateid,'status'=>1])->get('ec_category');
     if($q->num_rows()){
         return $q->row()->cate_name; 
  }
@@ -43,4 +43,32 @@ public function productdetails($slug){
  
     }
 }
+
+public function getcategorynav(){
+    $q = $this->db->where(['status'=>1,'parent_id'=> ''])->get('ec_category');
+    if($q->num_rows()){
+        return $q->result();
+ }else{
+    return false;
+ }
 }
+public function getsubcatcheck($cateid){
+    $q = $this->db->where(['status' => 1, 'parent_id' => $cateid])->get('ec_category');
+    if($q->num_rows() > 0){
+        return true;
+    } else {
+        return false;
+    }
+}
+public function getsubcategory($cateid){
+    $q = $this->db->where(['status' => 1, 'parent_id' => $cateid])->get('ec_category');
+    if($q->num_rows() > 0){
+        return $q->result();
+    } else {
+        return false;
+    }
+}
+
+}
+
+

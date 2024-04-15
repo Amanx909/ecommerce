@@ -6,6 +6,9 @@ class CategoryModel extends CI_Model {
     public function addcategory($post){
         $post['added_on'] = date('d M, Y');
         $post['cate_id'] = mt_rand(11111,99999);
+        $post['slug']= $this->slug($post['cate_name']);
+           
+    
         $q = $this->db->insert('ec_category', $post);
         return $q; // Return the result of the insert operation
     }
@@ -30,6 +33,11 @@ class CategoryModel extends CI_Model {
         return []; // Return an empty array if no subcategories are found
     }    
     
+    public function slug($catename){
+        $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/','-', $catename)));
+        return $slug;
+
+    }
             
                 
 }

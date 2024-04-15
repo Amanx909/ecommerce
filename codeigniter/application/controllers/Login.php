@@ -22,7 +22,7 @@ class Login extends CI_Controller {
                 $post = $this->input->post();
              $check = $this->LoginModel->auth($post);
              if($check){
-                    redirect('checkout');
+                   redirect('checkout');
 
              }else{
                 $this->session->set_flashdata('errMsg','Wrong Credentials');
