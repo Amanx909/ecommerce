@@ -565,7 +565,7 @@
                                     <div class="tp-product-item p-relative transition-3 mb-25">
                                        <div class="tp-product-thumb p-relative fix m-img">
                                           <a href="product/<?=$arr->slug?>">
-                                             <img src="uploads/<?=$arr->pro_main_image?>" alt="product-electronic">
+                                             <img src="uploads/<?=$arr->pro_main_image?>" alt="">
                                           </a>
 
                

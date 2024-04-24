@@ -22,7 +22,7 @@ class ProductModel extends CI_Model {
     }
 
     public function fetchcat($slug){
-      $q =  $this->db->select('cate_id')->where('slug',$slug)->get('ec_category');
+      $q =  $this->db->select('cati e_id')->where('slug',$slug)->get('ec_category');
       if($q->num_rows()){
         return $q->row()->cate_id;
       }
@@ -40,11 +40,23 @@ class ProductModel extends CI_Model {
             return false;
         }
     }
+    
+  
+        public function removeproduct($proid) {
+            // Remove the product from the database based on the provided product ID
+            $this->db->where('pro_id', $proid);
+            $this->db->delete('ec_product');
+        }
+    }
+    
+    
+    
+
 
     
   
 
-}
+
 
 
 

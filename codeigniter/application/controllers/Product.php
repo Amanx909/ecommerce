@@ -59,6 +59,7 @@ class Product extends CI_Controller {
            
             $this->load->view('product', $data);
         }
+        
 
     }
 
@@ -77,6 +78,6 @@ class Product extends CI_Controller {
     
         $this->load->view('front/productcat', $data);
     }
-    
+
       
 }

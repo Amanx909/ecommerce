@@ -252,7 +252,7 @@
                      <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                         <div class="logo">
                            <a href="index.html">
-                              <img src="assets_front/img/logo/logo.svg" alt="logo">
+                              <img src="" alt="logo">
                            </a>
                         </div>
                      </div>

@@ -6,6 +6,8 @@ class Checkout extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->library('session');
+        $this->load->model('CartModel');
+
         if(!empty($this->session->userdata('login_id'))){
 
         }else{
@@ -15,7 +17,9 @@ class Checkout extends CI_Controller {
     }
 
     public function index(){
-      echo"hello this is checkout"  ;
+        $data['cart'] = $this->CartModel->getcart();
+        $data['total'] = $this->CartModel->gettotal();
+        $this->load->view('front/checkout',$data);
         
     }
 }

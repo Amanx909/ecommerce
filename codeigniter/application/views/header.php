@@ -375,7 +375,7 @@
                            <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="uim uim-comment-message"></i>
-                                    <span>Setiings</span>
+                                    <span>Settings</span>
                                 </a>
                                 <ul class="sub-menu"aria-expanded="true">
 
@@ -392,12 +392,18 @@
                                 </a>
                             </li>
                             <li>
+                                
                                 <a href="product" class="waves-effect">
                                     <i class="uim uim-airplay"></i>
                                     <span>Product</span>
                                 </a>
                             </li>
-                            
+                            <li>
+                            <a href="AdminProduct" class="waves-effect">
+                                    <i class="uim uim-airplay"></i>
+                                    <span>Edit Product</span>
+                                </a>
+                            </li>
 <!--  
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
