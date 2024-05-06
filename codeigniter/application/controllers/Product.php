@@ -5,18 +5,18 @@ class Product extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        // Load necessary models, helpers, and libraries
         $this->load->model('CategoryModel');
-        $this->load->model('ProductModel'); 
-        // Load the HomeModel in the constructor or any method before using it
-        $this->load->model('HomeModel');
-// Correcting model class name
-        $this->load->helper('url'); // Load URL Helper
-        $this->load->helper('form'); // Load Form Helper
+        $this->load->model('ProductModel');
+        $this->load->model('HomeModel'); // Load the HomeModel
+        $this->load->helper('url');
+        $this->load->helper('form');
         $this->load->library('session');
         $this->load->library('form_validation');
     }
 
     public function index(){
+        // Set form validation rules
         $this->form_validation->set_rules('pro_id','product id','required|trim');
         $this->form_validation->set_rules('category','category','required|trim');
         $this->form_validation->set_rules('pro_name','product name','required|trim');
@@ -29,6 +29,7 @@ class Product extends CI_Controller {
         $this->form_validation->set_rules('selling_price','selling price','required|trim');
         $this->form_validation->set_rules('status','status ','required|trim');
 
+        // Set form validation rule for product image if it's empty
         if(empty($_FILES['pro_main_image']['name'])){
             $this->form_validation->set_rules('pro_main_image','product image','required|trim');
         }
@@ -44,23 +45,22 @@ class Product extends CI_Controller {
             $this->upload->do_upload('pro_main_image');
             $data=$this->upload->data();
             $post['pro_main_image']=$data['raw_name'].$data['file_ext'];
+            // Call addproduct method from ProductModel
             $check=$this->ProductModel->addproduct($post); // Corrected model name
             if($check){
+                // If product added successfully, set flash message and redirect
                 $this->session->set_flashdata('succMsg','Product added successfully');
                 redirect('product');
             } else {
+                // If product failed to insert, set flash message and redirect
                 $this->session->set_flashdata('errMsg','Product failed to insert');
                 redirect('product');
             }
         } else {
-          
-            
+            // If form validation fails, load categories and view
             $data['categories'] = $this->CategoryModel->allcategory();
-           
             $this->load->view('product', $data);
         }
-        
-
     }
 
     public function productbycat($slug, $slug2 = ''){
@@ -70,14 +70,15 @@ class Product extends CI_Controller {
             $slug = $slug;
         }
     
+        // Fetch category ID based on slug
         $cate_id = $this->ProductModel->fetchcat($slug);
+        // Fetch products based on category ID
         $data['products'] = $this->ProductModel->fetchproduct($cate_id);
       
         // Fetch categories navigation data from HomeModel
         $data['getcategorynav'] = $this->HomeModel->getcategorynav();
     
         $this->load->view('front/productcat', $data);
-    }
-
-      
+    }  
 }
+?>

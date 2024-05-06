@@ -6,17 +6,15 @@ class Shop extends CI_Controller {
     public function __construct() {
         parent::__construct();
         
+        // Load necessary helpers, models, libraries
         $this->load->helper('url');
         $this->load->model('ShopModel');
-        $this->load->helper('url'); // Load URL Helper
-        $this->load->helper('form'); // Load Form Helper
+        $this->load->helper('form');
         $this->load->library('session');
         $this->load->library('form_validation');
         $this->load->model('CategoryModel');
-        $this->load->model('ProductModel'); 
-        // Load the HomeModel in the constructor or any method before using it
-        $this->load->model('HomeModel');
-      
+        $this->load->model('ProductModel');
+        $this->load->model('HomeModel'); // Load the HomeModel
     }
 
     public function index(){
@@ -26,3 +24,4 @@ class Shop extends CI_Controller {
         $this->load->view('front/shop', $data);
     }
 }
+?>

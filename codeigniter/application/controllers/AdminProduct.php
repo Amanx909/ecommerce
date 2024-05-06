@@ -5,32 +5,33 @@ class AdminProduct extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        // Load necessary models, helper, and library
         $this->load->model('AdminProductModel');
         $this->load->model('ProductModel');
         $this->load->helper('url');
         $this->load->library('session');
     }
 
+    // Index method to display all products
     public function index() {
         $data['products'] = $this->AdminProductModel->get_all_products();
+        // Load the view to display product editing options
         $this->load->view('edit', $data);
     }
+
+    // Method to remove a product
     public function removeproduct($proid) {
+        // Call the model method to remove the product
         $check = $this->ProductModel->removeproduct($proid);
         if ($check) {
-            // Debugging: Check if control reaches this point
-            echo "Product removed successfully."; // Remove this in production
+            // If the product is successfully removed, set flash data message and redirect
             $this->session->set_flashdata('succMsg', 'Product removed successfully.');
-            redirect('edit');
+            redirect('AdminProduct');
         } else {
-            // Debugging: Check if control reaches this point
-            echo "Failed to remove product."; // Remove this in production
-            $this->session->set_flashdata('errMsg', 'Failed to remove product.');
-            redirect('edit');
+            // If there is an error in removing the product, set flash data message and redirect
+            $this->session->set_flashdata('errMsg', 'Product removal failed.');
+            redirect('AdminProduct');
         }
     }
-    
-    // Add more methods for removing and editing products as needed
-
 }
 ?>

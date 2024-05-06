@@ -26,6 +26,15 @@
 
                 <div class="page-content">
                     <div class="container-fluid">
+                        <?php if ($this->session->flashdata('succMsg')) { ?>
+                        <div class="alert alert-success">
+                            <?= $this->session->flashdata('succMsg') ?>
+                        </div>
+                    <?php } ?>
+                    <?php if ($this->session->flashdata('errMsg')) { ?>
+                        <div class="alert alert-success">
+                            <?= $this->session->flashdata('errMsg') ?>
+                    <?php } ?>
 
                         <div class="row">
                             <div class="col-lg-12">

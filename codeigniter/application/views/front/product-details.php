@@ -55,7 +55,7 @@
                   <div class="row">
                      <div class="col-xl-7 col-lg-6">
                         <div class="tp-product-details-thumb-wrapper tp-tab d-sm-flex">
-                         ->
+                       
                            <div class="tab-content m-img" id="productDetailsNavContent">
                               <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab" tabindex="0">
                                  <div class="tp-product-details-nav-main-thumb">

@@ -22,15 +22,16 @@ class ProductModel extends CI_Model {
     }
 
     public function fetchcat($slug){
-      $q =  $this->db->select('cati e_id')->where('slug',$slug)->get('ec_category');
-      if($q->num_rows()){
-        return $q->row()->cate_id;
-      }
+        // Fetch the category ID based on the provided slug
+        $q =  $this->db->select('cate_id')->where('slug',$slug)->get('ec_category');
+        if($q->num_rows()){
+            return $q->row()->cate_id;
+        }
     }
+
     public function fetchproduct($cateid) {
-        // Set where conditions before querying
+        // Fetch products based on category or sub-category
         $this->db->where(['status' => 1]);
-        // Use OR condition for category and sub-category
         $this->db->where("(category = $cateid OR sub_category = $cateid)");
         $q = $this->db->get('ec_product');
         
@@ -41,23 +42,10 @@ class ProductModel extends CI_Model {
         }
     }
     
-  
-        public function removeproduct($proid) {
-            // Remove the product from the database based on the provided product ID
-            $this->db->where('pro_id', $proid);
-            $this->db->delete('ec_product');
-        }
+    public function removeproduct($proid) {
+        // Remove product from the database based on product ID
+        $this->db->where('pro_id', $proid);
+        $this->db->delete('ec_product');
     }
-    
-    
-    
-
-
-    
-  
-
-
-
-
-
+}
 ?>

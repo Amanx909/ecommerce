@@ -50,6 +50,11 @@
                   <h3 class="tp-login-title">Sign Up Keyify.</h3>
                   <p>Already have an account?  <span><a href="login" style="color: blue"; >Sign In</a></span></p>
                </div>
+               <?php if ($this->session->flashdata('success')): ?>
+                            <div class="alert alert-success">
+                                <?= $this->session->flashdata('success'); ?>
+                            </div>
+                            <?php endif; ?>
                <div class="tp-login-option">
                   <div class="tp-login-social mb-10 d-flex flex-wrap align-items-center justify-content-center">
                      <div class="tp-login-option-item has-google">

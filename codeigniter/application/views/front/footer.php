@@ -11,7 +11,7 @@
                                     <img src="assets_front/img/logo/logo.svg" alt="logo">
                                  </a>
                               </div>
-                              <p class="tp-footer-desc">We are a team of designers and developers that create high quality WordPress</p>
+                              <p class="tp-footer-desc"></p>
                               <div class="tp-footer-social">
                                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -57,7 +57,7 @@
                            <div class="tp-footer-widget-content">
                               <div class="tp-footer-talk mb-20">
                                  <span>Got Questions? Call us</span>
-                                 <h4><a href="tel:670-413-90-762">+670 413 90 762</a></h4>
+                                 <h4><a href="tel:670-413-90-762">+977-9845633928</a></h4>
                               </div>
                               <div class="tp-footer-contact">
                                  <div class="tp-footer-contact-item d-flex align-items-start">
@@ -101,7 +101,7 @@
                      <div class="row align-items-center">
                         <div class="col-md-6">
                            <div class="tp-footer-copyright">
-                              <p>© 2023 All Rights Reserved  |  HTML Template by <a href="index.html">Themepure</a>.</p>
+                              <p>© 2023 All Rights Reserved<a href="index.html"></a>.</p>
                            </div>
                         </div>
                         <div class="col-md-6">

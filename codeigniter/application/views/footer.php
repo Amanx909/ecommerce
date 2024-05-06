@@ -112,4 +112,6 @@ function get_categories(cate_id){
             }
     });
 }
+
+
 </script>
